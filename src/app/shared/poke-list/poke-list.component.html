@@ -1,0 +1,382 @@
+<div class="PokedexImg">
+<img  src="assets/logo.svg" alt="Pokedex Logo">
+</div>
+<section class="gen1 listagem">
+    <ng-template [ngFor] let-pokemon [ngForOf]="getAllPokemons">         
+        <a [routerLink]="['details', pokemon.status.id]" class="pokemon" *ngIf="pokemon.status" [class]="pokemon.status.types[0]?.type.name">
+            <section class="pokemon_status">
+                <div>
+                    <h2>{{ pokemon.name }}<p>#{{pokemon.status.id}}</p></h2>
+                </div>
+                   
+                <ul>
+                    <li class="box Back" *ngFor="let value of pokemon.status.types" [ngClass]="{
+                        normal: value.type.name == 'normal',
+                        fire: value.type.name == 'fire',
+                        water: value.type.name == 'water',
+                        electric: value.type.name == 'electric',
+                        grass: value.type.name == 'grass',
+                        ice: value.type.name == 'ice',
+                        fighting: value.type.name == 'fighting',
+                        poison: value.type.name == 'poison',
+                        ground: value.type.name == 'ground',
+                        flying: value.type.name == 'flying',
+                        psychic: value.type.name == 'psychic',
+                        bug: value.type.name == 'bug',
+                        rock: value.type.name == 'rock',
+                        ghost: value.type.name == 'ghost',
+                        dragon: value.type.name == 'dragon',
+                        dark: value.type.name == 'dark',
+                        steel: value.type.name == 'steel',
+                        fairy: value.type.name == 'fairy'
+                      }">
+                        {{value.type.name}}
+                    </li>
+                </ul>
+            </section>
+
+            <section  class="pokemon_image">
+                <img *ngIf="classicMode"  class="imgPixel" [src]="pokemon['status']['sprites'].front_default" [alt]="pokemon.name">
+            </section>
+        </a>
+    </ng-template>
+</section>  
+ 
+<section class="gen2 listagem">
+    <ng-template [ngFor] let-pokemon [ngForOf]="getAllPokemons2G">
+        <a [routerLink]="['details', pokemon.status.id]" class="pokemon" *ngIf="pokemon.status" [class]="pokemon.status.types[0]?.type.name">
+            <section class="pokemon_status">
+                <div>
+                    <h2>{{ pokemon.name }}<p>#{{pokemon.status.id}}</p></h2>
+                </div>
+                   
+                <ul>
+                    <li class="box" *ngFor="let value of pokemon.status.types" [ngClass]="{
+                        normal: value.type.name == 'normal',
+                        fire: value.type.name == 'fire',
+                        water: value.type.name == 'water',
+                        electric: value.type.name == 'electric',
+                        grass: value.type.name == 'grass',
+                        ice: value.type.name == 'ice',
+                        fighting: value.type.name == 'fighting',
+                        poison: value.type.name == 'poison',
+                        ground: value.type.name == 'ground',
+                        flying: value.type.name == 'flying',
+                        psychic: value.type.name == 'psychic',
+                        bug: value.type.name == 'bug',
+                        rock: value.type.name == 'rock',
+                        ghost: value.type.name == 'ghost',
+                        dragon: value.type.name == 'dragon',
+                        dark: value.type.name == 'dark',
+                        steel: value.type.name == 'steel',
+                        fairy: value.type.name == 'fairy'
+                      }">
+                        {{value.type.name}}
+                    </li>
+                </ul>
+            </section>
+
+            <section  class="pokemon_image">
+                <img *ngIf="classicMode"  class="imgPixel" [src]="pokemon['status']['sprites'].front_default" [alt]="pokemon.name">
+            </section>
+        </a>
+    </ng-template>
+</section>  
+
+<section class="gen3 listagem">
+    <ng-template [ngFor] let-pokemon [ngForOf]="getAllPokemons3G">
+        <a [routerLink]="['details', pokemon.status.id]" class="pokemon" *ngIf="pokemon.status" [class]="pokemon.status.types[0]?.type.name"> 
+            <section class="pokemon_status">
+                <div>
+                    <h2>{{ pokemon.name }}<p>#{{pokemon.status.id}}</p></h2>
+                </div>
+               
+                <ul>
+                    <li class="box" *ngFor="let value of pokemon.status.types" [ngClass]="{
+                        normal: value.type.name == 'normal',
+                        fire: value.type.name == 'fire',
+                        water: value.type.name == 'water',
+                        electric: value.type.name == 'electric',
+                        grass: value.type.name == 'grass',
+                        ice: value.type.name == 'ice',
+                        fighting: value.type.name == 'fighting',
+                        poison: value.type.name == 'poison',
+                        ground: value.type.name == 'ground',
+                        flying: value.type.name == 'flying',
+                        psychic: value.type.name == 'psychic',
+                        bug: value.type.name == 'bug',
+                        rock: value.type.name == 'rock',
+                        ghost: value.type.name == 'ghost',
+                        dragon: value.type.name == 'dragon',
+                        dark: value.type.name == 'dark',
+                        steel: value.type.name == 'steel',
+                        fairy: value.type.name == 'fairy'
+                      }">
+                        {{value.type.name}}
+                    </li>
+                </ul>
+            </section>
+
+            <section  class="pokemon_image">
+                <img *ngIf="classicMode"  class="imgPixel" [src]="pokemon['status']['sprites'].front_default" [alt]="pokemon.name">
+            </section>
+        </a>
+    </ng-template>
+</section>
+
+<section class="gen4 listagem">
+    <ng-template [ngFor] let-pokemon [ngForOf]="getAllPokemons4G">
+        <a [routerLink]="['details', pokemon.status.id]" class="pokemon" *ngIf="pokemon.status" [class]="pokemon.status.types[0]?.type.name"> 
+            <section class="pokemon_status">
+                <div>
+                    <h2>{{ pokemon.name }}<p>#{{pokemon.status.id}}</p></h2>
+                </div>
+               
+               
+                <ul>
+                    <li class="box" *ngFor="let value of pokemon.status.types" [ngClass]="{
+                        normal: value.type.name == 'normal',
+                        fire: value.type.name == 'fire',
+                        water: value.type.name == 'water',
+                        electric: value.type.name == 'electric',
+                        grass: value.type.name == 'grass',
+                        ice: value.type.name == 'ice',
+                        fighting: value.type.name == 'fighting',
+                        poison: value.type.name == 'poison',
+                        ground: value.type.name == 'ground',
+                        flying: value.type.name == 'flying',
+                        psychic: value.type.name == 'psychic',
+                        bug: value.type.name == 'bug',
+                        rock: value.type.name == 'rock',
+                        ghost: value.type.name == 'ghost',
+                        dragon: value.type.name == 'dragon',
+                        dark: value.type.name == 'dark',
+                        steel: value.type.name == 'steel',
+                        fairy: value.type.name == 'fairy'
+                      }">
+                        {{value.type.name}}
+                    </li>
+                </ul>
+            </section>
+
+            <section  class="pokemon_image">
+                <img *ngIf="classicMode"  class="imgPixel" [src]="pokemon['status']['sprites'].front_default" [alt]="pokemon.name">
+            </section>
+
+        </a>
+    </ng-template>
+</section>
+
+<section class="gen5 listagem">
+    <ng-template [ngFor] let-pokemon [ngForOf]="getAllPokemons5G">
+        <a [routerLink]="['details', pokemon.status.id]" class="pokemon" *ngIf="pokemon.status" [class]="pokemon.status.types[0]?.type.name"> 
+            <section class="pokemon_status">
+                <div>
+                    <h2>{{ pokemon.name }}<p>#{{pokemon.status.id}}</p></h2>
+                </div>
+                    
+                <ul>
+                    <li class="box" *ngFor="let value of pokemon.status.types" [ngClass]="{
+                        normal: value.type.name == 'normal',
+                        fire: value.type.name == 'fire',
+                        water: value.type.name == 'water',
+                        electric: value.type.name == 'electric',
+                        grass: value.type.name == 'grass',
+                        ice: value.type.name == 'ice',
+                        fighting: value.type.name == 'fighting',
+                        poison: value.type.name == 'poison',
+                        ground: value.type.name == 'ground',
+                        flying: value.type.name == 'flying',
+                        psychic: value.type.name == 'psychic',
+                        bug: value.type.name == 'bug',
+                        rock: value.type.name == 'rock',
+                        ghost: value.type.name == 'ghost',
+                        dragon: value.type.name == 'dragon',
+                        dark: value.type.name == 'dark',
+                        steel: value.type.name == 'steel',
+                        fairy: value.type.name == 'fairy'
+                      }">
+                        {{value.type.name}}
+                    </li>
+                </ul>
+            </section>
+
+            <section  class="pokemon_image">
+                <img *ngIf="classicMode"  class="imgPixel" [src]="pokemon['status']['sprites'].front_default" [alt]="pokemon.name">
+            </section>
+
+        </a>
+    </ng-template>
+</section>
+
+<section class="gen6 listagem">
+    <ng-template [ngFor] let-pokemon [ngForOf]="getAllPokemons6G">
+        <a [routerLink]="['details', pokemon.status.id]" class="pokemon" *ngIf="pokemon.status" [class]="pokemon.status.types[0]?.type.name"> 
+            <section class="pokemon_status">
+                <div>
+                    <h2>{{ pokemon.name }}<p>#{{pokemon.status.id}}</p></h2>
+                </div>
+               
+               
+                <ul>
+                    <li class="box" *ngFor="let value of pokemon.status.types" [ngClass]="{
+                        normal: value.type.name == 'normal',
+                        fire: value.type.name == 'fire',
+                        water: value.type.name == 'water',
+                        electric: value.type.name == 'electric',
+                        grass: value.type.name == 'grass',
+                        ice: value.type.name == 'ice',
+                        fighting: value.type.name == 'fighting',
+                        poison: value.type.name == 'poison',
+                        ground: value.type.name == 'ground',
+                        flying: value.type.name == 'flying',
+                        psychic: value.type.name == 'psychic',
+                        bug: value.type.name == 'bug',
+                        rock: value.type.name == 'rock',
+                        ghost: value.type.name == 'ghost',
+                        dragon: value.type.name == 'dragon',
+                        dark: value.type.name == 'dark',
+                        steel: value.type.name == 'steel',
+                        fairy: value.type.name == 'fairy'
+                      }">
+                        {{value.type.name}}
+                    </li>
+                </ul>
+            </section>
+
+            <section  class="pokemon_image">
+                <img *ngIf="classicMode"  class="imgPixel" [src]="pokemon['status']['sprites'].front_default" [alt]="pokemon.name">
+            </section>
+
+        </a>
+    </ng-template>
+</section>
+
+<section class="gen7 listagem">
+    <ng-template [ngFor] let-pokemon [ngForOf]="getAllPokemons7G">
+        <a [routerLink]="['details', pokemon.status.id]" class="pokemon" *ngIf="pokemon.status" [class]="pokemon.status.types[0]?.type.name"> 
+            <section class="pokemon_status">
+                <div>
+                    <h2>{{ pokemon.name }}<p>#{{pokemon.status.id}}</p></h2>
+                </div>
+               
+               
+                <ul>
+                    <li class="box" *ngFor="let value of pokemon.status.types" [ngClass]="{
+                        normal: value.type.name == 'normal',
+                        fire: value.type.name == 'fire',
+                        water: value.type.name == 'water',
+                        electric: value.type.name == 'electric',
+                        grass: value.type.name == 'grass',
+                        ice: value.type.name == 'ice',
+                        fighting: value.type.name == 'fighting',
+                        poison: value.type.name == 'poison',
+                        ground: value.type.name == 'ground',
+                        flying: value.type.name == 'flying',
+                        psychic: value.type.name == 'psychic',
+                        bug: value.type.name == 'bug',
+                        rock: value.type.name == 'rock',
+                        ghost: value.type.name == 'ghost',
+                        dragon: value.type.name == 'dragon',
+                        dark: value.type.name == 'dark',
+                        steel: value.type.name == 'steel',
+                        fairy: value.type.name == 'fairy'
+                      }">
+                        {{value.type.name}}
+                    </li>
+                </ul>
+            </section>
+
+            <section  class="pokemon_image">
+                <img *ngIf="classicMode"  class="imgPixel" [src]="pokemon['status']['sprites'].front_default" [alt]="pokemon.name">
+            </section>
+
+        </a>
+    </ng-template>
+</section>
+
+<section class="gen8 listagem">
+    <ng-template [ngFor] let-pokemon [ngForOf]="getAllPokemons8G">
+        <a [routerLink]="['details', pokemon.status.id]" class="pokemon" *ngIf="pokemon.status" [class]="pokemon.status.types[0]?.type.name"> 
+            <section class="pokemon_status">
+                <div>
+                    <h2>{{ pokemon.name }}<p>#{{pokemon.status.id}}</p></h2>
+                </div>
+               
+               
+                <ul>
+                    <li class="box" *ngFor="let value of pokemon.status.types" [ngClass]="{
+                        normal: value.type.name == 'normal',
+                        fire: value.type.name == 'fire',
+                        water: value.type.name == 'water',
+                        electric: value.type.name == 'electric',
+                        grass: value.type.name == 'grass',
+                        ice: value.type.name == 'ice',
+                        fighting: value.type.name == 'fighting',
+                        poison: value.type.name == 'poison',
+                        ground: value.type.name == 'ground',
+                        flying: value.type.name == 'flying',
+                        psychic: value.type.name == 'psychic',
+                        bug: value.type.name == 'bug',
+                        rock: value.type.name == 'rock',
+                        ghost: value.type.name == 'ghost',
+                        dragon: value.type.name == 'dragon',
+                        dark: value.type.name == 'dark',
+                        steel: value.type.name == 'steel',
+                        fairy: value.type.name == 'fairy'
+                      }">
+                        {{value.type.name}}
+                    </li>
+                </ul>
+            </section>
+
+            <section  class="pokemon_image">
+                <img *ngIf="classicMode"  class="imgPixel" [src]="pokemon['status']['sprites'].front_default" [alt]="pokemon.name">
+            </section>
+
+        </a>
+    </ng-template>
+</section>
+
+<section class="gen9 listagem">
+    <ng-template [ngFor] let-pokemon [ngForOf]="getAllPokemons9G">
+        <a [routerLink]="['details', pokemon.status.id]" class="pokemon" *ngIf="pokemon.status" [class]="pokemon.status.types[0]?.type.name"> 
+            <section class="pokemon_status">
+                <div>
+                    <h2>{{ pokemon.name }}<p>#{{pokemon.status.id}}</p></h2>
+                </div>
+                 
+                <ul>
+                    <li class="box" *ngFor="let value of pokemon.status.types" [ngClass]="{
+                        normal: value.type.name == 'normal',
+                        fire: value.type.name == 'fire',
+                        water: value.type.name == 'water',
+                        electric: value.type.name == 'electric',
+                        grass: value.type.name == 'grass',
+                        ice: value.type.name == 'ice',
+                        fighting: value.type.name == 'fighting',
+                        poison: value.type.name == 'poison',
+                        ground: value.type.name == 'ground',
+                        flying: value.type.name == 'flying',
+                        psychic: value.type.name == 'psychic',
+                        bug: value.type.name == 'bug',
+                        rock: value.type.name == 'rock',
+                        ghost: value.type.name == 'ghost',
+                        dragon: value.type.name == 'dragon',
+                        dark: value.type.name == 'dark',
+                        steel: value.type.name == 'steel',
+                        fairy: value.type.name == 'fairy'
+                      }">
+                        {{value.type.name}}
+                    </li>
+                </ul>
+            </section>
+
+            <section  class="pokemon_image">
+                <img *ngIf="classicMode"  class="imgPixel" [src]="pokemon['status']['sprites'].front_default" [alt]="pokemon.name">
+            </section>
+        </a>
+    </ng-template>
+</section> 
+
+<img src="assets/error.png" alt="deu erro na mostragem do pokemon" width="100%" *ngIf="apiError">    
