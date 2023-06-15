@@ -2,7 +2,6 @@
   "name": "pokedex",
   "version": "0.0.0",
   "scripts": {
-    "ng": "npm",
     "start": "npm start",
     "build": "npm build",
     "watch": "npm build --watch --configuration development",
