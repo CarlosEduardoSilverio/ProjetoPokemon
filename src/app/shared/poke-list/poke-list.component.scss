@@ -1,0 +1,229 @@
+@import '../../../config-scss/rem-calc.scss';
+
+$padding: rem-calc(20);
+:host{
+
+    .PokedexImg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: rem-calc(15);
+        margin-bottom: rem-calc(15);
+    }
+
+
+    .listagem{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: $padding 0;
+        background-color: rgba(97, 80, 80, 0.224);
+        // border: 2px solid rgb(0, 30, 255);
+
+        .pokemon{
+            position: relative;
+            display: flex;
+            background: var(--branco);
+            width: calc(32% - 2.5rem);
+            height: rem-calc(157 - 40);
+            margin-bottom: rem-calc(10);
+            padding: $padding;
+            border-radius: rem-calc(10);
+            text-decoration: none;
+            color: var(--primary-color);
+            border: 2px solid rgb(0, 0, 0);
+
+            &_status{
+                h2{
+                    color: rgb(0, 0, 0);
+                    font-size: rem-calc(22);
+                    font-style: italic;
+                    line-height: 1.2;
+                    font-weight: 700;
+                    text-transform: capitalize;
+                    margin-bottom: rem-calc(10);
+                    // border: 2px solid rgb(0, 255, 17);
+
+                }
+
+                p{
+                    font-size: rem-calc(12);
+                }
+
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    // border: 2px solid rgb(255, 238, 0);
+
+                    li{
+                        background: var(--cinza);
+                        font-size: rem-calc(10);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-radius: rem-calc(50);
+                        width: rem-calc(60);
+                        height: rem-calc(12);
+                        margin-bottom: rem-calc(5);
+                        border: 2px solid rgb(0, 0, 0);
+                    }
+
+                    .box {
+                        padding: 10px;
+                        font-size: 13px !important;
+                        color: white;
+                        // Cor dos Tipos dos Pokemons
+                        &.normal {
+                            background-color: #969682 !important;
+                        }
+                        &.fire {
+                            background-color: #ee4d30 !important;
+                        }
+                        &.water {
+                            background-color: #0015ff !important;
+                        }
+                        &.electric {
+                            background-color: #ffbf00 !important;
+                        }
+                        &.grass {
+                            background-color: #5fc636 !important;
+                        }
+                        &.ice{
+                            background-color: #2eb9ff !important;
+                        }
+                        &.fighting {
+                            background-color: #9b4232 !important;
+                        }
+                        &.poison {
+                            background-color: #b4349b !important;
+                        }
+                        &.ground {
+                            background-color: #b69a46 !important;
+                        }
+                        &.flying {
+                            background-color: #7281db !important;
+                        }
+                        &.psychic {
+                            background-color: #ff7eb1 !important;
+                        }
+                        &.bug {
+                            background-color: #91a114 !important;
+                        }
+                        &.rock {
+                            background-color: #c5af57 !important;
+                        }
+                        &.ghost {
+                            background-color: #53539c !important;
+                        }
+                        &.dragon {
+                            background-color: #7568cb !important;
+                        }
+                        &.dark {
+                            background-color: #5a3f32 !important;
+                        }
+                        &.steel {
+                            background-color: #838392 !important;
+                        }
+                        &.fairy {
+                            background-color: #ff83ff !important;
+                        }   
+                    }
+                }
+            }
+
+            &_image{
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: rem-calc(100);
+                width: rem-calc(110);
+                right: $padding;
+                bottom: $padding;
+                background: url('../../../assets/bg/pokeball-background.png') no-repeat;
+                background-position-x: 50%;
+                background-size: rem-calc(100);
+                background-color: rgba(255, 255, 255, 0.272);
+                border-top-left-radius: rem-calc(15);
+                border-bottom-right-radius: rem-calc(15);
+                border: 2px solid black ;
+
+                .imgPixel{
+                    height: rem-calc(120);
+                }
+
+                .imgOficial{
+                    height: rem-calc(90);
+                }
+            }
+        }
+    }
+   
+    // Cor do Background das "caixas" dos Pokemons
+    .normal {
+        background-color: #AAAA99 !important;
+    }
+    .fire {
+        background-color: #ff4422 !important;
+    }
+    .water {
+        background-color: #3344FF !important;
+    }
+    .electric {
+        background-color: #FFCC33 !important;
+    }
+    .grass {
+        background-color: #77CC55 !important;
+    }
+    .ice{
+        background-color: #66CCFF !important;
+    }
+    .fighting {
+        background-color: #BB5544 !important;
+    }
+    .poison {
+        background-color: #AA5599 !important;
+    }
+    .ground {
+        background-color: #DDBB55 !important;
+    }
+    .flying {
+        background-color: #8899FF !important;
+    }
+    .psychic {
+        background-color: #FF5599 !important;
+    }
+    .bug {
+        background-color: #AABB22 !important;
+    }
+    .rock {
+        background-color: #BBAA66 !important;
+    }
+    .ghost {
+        background-color: #6666BB !important;
+    }
+    .dragon {
+        background-color: #7766EE !important;
+    }
+    .dark {
+        background-color: #775544 !important;
+    }
+    .steel {
+        background-color: #AAAABB !important;
+    }
+    .fairy {
+        background-color: #EE99EE !important;
+    }    
+    
+    @media (max-width: 880px)
+    {   
+        .listagem{
+            .pokemon{
+                // width: calc(80% - 2.5rem);
+                height: rem-calc(120 - 10);
+    
+            }
+        }
+       
+    }
+}

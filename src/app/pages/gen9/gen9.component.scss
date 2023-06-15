@@ -1,0 +1,109 @@
+@import '../../../config-scss/rem-calc.scss';
+
+:host::ng-deep{ 
+    .gen1{
+    display: none !important;
+    }
+    .gen2{
+        display: none !important;
+    }
+    .gen3{
+        display: none !important;
+        }
+    .gen4{
+        display: none !important;
+    }
+    .gen5{
+        display: none !important;
+    }
+    .gen6{
+        display: none !important;
+    }
+    .gen7{
+        display: none !important;
+    }
+    .gen8{
+        display: none !important;
+    }
+}
+
+:host{
+
+    .Regiao{
+        display: flex;
+        color: white;
+        border: 2px solid rgb(0, 0, 0);
+        background-color: rgba(255, 255, 255, 0.053);
+        // max-width: 100%;
+
+        .Esquerda{
+            // border: 2px solid red;
+            
+            .Texto1{
+                margin: rem-calc(20);
+                line-height: 1.2;
+                margin-top: rem-calc(15);
+            }
+    
+            .Texto2{
+                margin: rem-calc(20);
+                line-height: 1.2;
+            }
+    
+            .GeoDemo{
+                margin: rem-calc(20);
+                font-size: rem-calc(30);
+                font-weight: bold;
+                padding-top: rem-calc(10);
+                padding-bottom: rem-calc(10);
+            }
+        }
+    
+        .Direita{
+            border: 2px solid rgb(255, 255, 255);
+            background-color: rgb(30, 105, 30);
+            margin: rem-calc(4);
+            height: rem-calc(380);
+    
+            .Nome{
+                background-color: rgba(255, 255, 255, 0.473);
+                margin: rem-calc(4);
+                border-radius: rem-calc(5);
+                border: 1px solid black ;
+        
+                &_JP{
+                    // position: absolute;
+                    display: flex;
+                    justify-content: center;
+                    font-size: rem-calc(28);
+                    // padding-right: rem-calc(30);
+                    padding-top: rem-calc(5);
+                    font-weight: 700;
+                    
+                }
+        
+                &_EN{
+                    display: flex;
+                    justify-content: center;
+                    font-size: rem-calc(28);
+                    // padding-left: rem-calc(30);
+                    padding-bottom: rem-calc(5);
+                }
+            }
+    
+            .Img{
+                img{
+                    height: rem-calc(250);
+                    margin: rem-calc(8);
+                }
+    
+                .arte{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: rem-calc(12);
+                }
+            }
+        }
+    }
+}

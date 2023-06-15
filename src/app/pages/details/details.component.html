@@ -1,0 +1,159 @@
+<main class="Borda" *ngIf="pokemon"> 
+    <ng-template [ngIf]="isLoading">
+        <section class="Details" [class]="pokemon[0].types[0].type.name">
+            <header class="Headerzada">
+                <div>
+                    <p class="NomeIngles">{{ pokemon[0]?.name}} </p>
+                    <p class="NomeJapones">{{ pokemon[1].names[9]?.name}} </p><p >#{{ pokemon[0]?.id }}</p>        
+                </div>
+                <ol>
+                    <li class="box PokeTipos"  *ngFor="let value of pokemon[0].types" [ngClass]="{
+                        normal: value.type.name == 'normal',
+                        fire: value.type.name == 'fire',
+                        water: value.type.name == 'water',
+                        electric: value.type.name == 'electric',
+                        grass: value.type.name == 'grass',
+                        ice: value.type.name == 'ice',
+                        fighting: value.type.name == 'fighting',
+                        poison: value.type.name == 'poison',
+                        ground: value.type.name == 'ground',
+                        flying: value.type.name == 'flying',
+                        psychic: value.type.name == 'psychic',
+                        bug: value.type.name == 'bug',
+                        rock: value.type.name == 'rock',
+                        ghost: value.type.name == 'ghost',
+                        dragon: value.type.name == 'dragon',
+                        dark: value.type.name == 'dark',
+                        steel: value.type.name == 'steel',
+                        fairy: value.type.name == 'fairy'
+                    }">{{value.type.name}}
+                    </li>
+                </ol>
+            </header>
+            <!-- Faz parte do Header -->
+            <section class="Sprites">
+                <div class="Sprites_Img"> 
+                    <img class="Sprites_Img_Pixel" *ngIf="classicMode && !isShiny && !isBack" [src]="pokemon[0]['sprites'].front_default" [alt]="pokemon.name">
+                    <img class="Sprites_Img_Official" *ngIf="isBack && !isShiny && classicMode" [src]="pokemon[0]['sprites']['other']['official-artwork'].front_default" [alt]="pokemon.name">
+                    <img class="Sprites_Img_Official" *ngIf="isBack && isShiny && classicMode" [src]="pokemon[0]['sprites']['other']['official-artwork'].front_shiny" [alt]="pokemon.name">
+                    <img class="Sprites_Img_Pixel" *ngIf="!isBack && isShiny && classicMode" [src]="pokemon[0]['sprites'].front_shiny" [alt]="pokemon.name"> 
+                </div>
+                <div class="Sprites_Icons">
+                    <img (click)="isShiny = !isShiny" class="Sprites_Icons_Imgs" src="assets/Speciais/estrela.png">
+                    <img (click)="isBack = !isBack" *ngIf="classicMode" class="Sprites_Icons_Imgs" src="assets/Speciais/pokemon.png">
+                </div>
+            </section>
+            <!-- Faz parte do Header -->
+            
+            <section class="pokemon_status">
+                <div class="Infos">
+                    <div>
+                        <p class="DexTrain">Pokedex Data</p>
+                        <p class="PokeDatas">Height: {{ pokemon[0]?.height }} M</p>
+                        <p class="PokeDatas">Weight: {{ pokemon[0]?.weight }} Kg</p>
+                        <p class="PokeDatas">Abilities: {{ pokemon[0].abilities[0]?.ability.name }} / {{ pokemon[0].abilities[1]?.ability.name }}</p>
+                        <p class="PokeDatas">First appearance: {{ pokemon[1]['generation']?.name }}</p>
+                        <p class="PokeDatas">Shape: {{ pokemon[1]['shape']?.name }}</p>
+                    </div>
+                    <div class="Ii">
+                        <p class="DexTrain">Training</p>
+                        <p class="PokeDatas">Catch rate: {{ pokemon[1].capture_rate }}</p>
+                        <p class="PokeDatas">Base Friendship: {{ pokemon[1].base_happiness }}</p>
+                        <p class="PokeDatas">Base Exp: {{ pokemon[0].base_experience }}</p>
+                        <p class="PokeDatas">Growth Rate: {{ pokemon[1]['growth_rate'].name }}</p>
+                    </div>
+                </div>
+                <article class="pokemon_status_statistics fadeIn">
+                    <section>
+                        <h3>Estatísticas</h3>
+                        <ol>
+                            <li *ngFor="let value of pokemon[0]?.stats">
+                                {{ value.stat.name }}
+                                <strong>
+                                    {{ value.base_stat }}
+                                </strong>
+                                <div class="bar__stats">
+                                    <div class="barprogress__value"[style.background-color]="effectColorBar(value.base_stat)" [style.width]="effectBar(value.base_stat)">
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </section>
+                    <div class="Pokedexes">
+                        <div class="mAo">
+                            <div class="Pokedex" [class]="pokemon[0].types[0].type.name">
+                                <a [routerLink]="['/gen1']">
+                                    <p class="Regiao">Kanto</p>
+                                    <p class="Geração">Generation 1</p>
+                                    <img src="assets/Pokedex/Gen1.png" alt="Pokedex Generation 1">
+                                </a>
+                            </div>
+                            <div class="Pokedex" [class]="pokemon[0].types[0].type.name">
+                                <a [routerLink]="['/gen2']">
+                                    <p class="Regiao">Johto</p>
+                                    <p class="Geração">Generation 2</p>
+                                    <img src="assets/Pokedex/Gen2.png" alt="Pokedex Generation 2">
+                                </a>
+                            </div>
+                            <div class="Pokedex" [class]="pokemon[0].types[0].type.name">
+                                <a [routerLink]="['/gen3']">
+                                    <p class="Regiao">Hoenn</p>
+                                    <p class="Geração">Generation 3</p>
+                                    <img src="assets/Pokedex/Gen3.png" alt="Pokedex Generation 3">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mAo">
+                            <div class="Pokedex" [class]="pokemon[0].types[0].type.name">
+                                <a [routerLink]="['/gen4']">
+                                    <p class="Regiao">Sinnoh</p>   
+                                    <p class="Geração">Generation 4</p>
+                                    <img src="assets/Pokedex/Gen4.png" alt="Pokedex Generation 4">
+                                </a>
+                            </div>
+                            
+                            <div class="Pokedex" [class]="pokemon[0].types[0].type.name">
+                                <a [routerLink]="['/gen5']">
+                                    <p class="Regiao">Unova</p>
+                                    <p class="Geração">Generation 5</p>
+                                    <img src="assets/Pokedex/Gen5.png" alt="Pokedex Generation 5">
+                                </a>
+                            </div>
+                            <div class="Pokedex" [class]="pokemon[0].types[0].type.name">
+                                <a [routerLink]="['/gen6']">
+                                    <p class="Regiao">Kalos</p>
+                                    <p class="Geração">Generation 6</p>
+                                    <img src="assets/Pokedex/Gen6.png" alt="Pokedex Generation 6">
+                                </a>
+                            </div>   
+                        </div>
+                        <div class="mAo">
+                            <div class="Pokedex" [class]="pokemon[0].types[0].type.name">
+                                <a [routerLink]="['/gen7']">
+                                    <p class="Regiao">Alola</p>
+                                    <p class="Geração">Generation 7</p>
+                                    <img src="assets/Pokedex/Gen7.png" alt="Pokedex Generation 7">
+                                </a>
+                            </div>
+                            <div class="Pokedex" [class]="pokemon[0].types[0].type.name">
+                                <a [routerLink]="['/gen8']">
+                                    <p class="Regiao">Galar</p>
+                                    <p class="Geração">Generation 8</p>
+                                    <img src="assets/Pokedex/Gen8.png" alt="Pokedex Generation 8">
+                                </a>
+                            </div>                
+                            <div class="Pokedex" [class]="pokemon[0].types[0].type.name">
+                                <a [routerLink]="['/gen9']">
+                                    <p class="Regiao">Paldea</p>
+                                    <p class="Geração">Generation 9</p>
+                                    <img src="assets/Pokedex/Gen9.png" alt="Pokedex Generation 9">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </section>
+    </ng-template>
+    <img src="assets/error.png" alt="deu erro na mostragem do pokemon" width="100%" *ngIf="apiError">
+</main> 
